@@ -4,6 +4,7 @@ section {
   height: 100vh;
 }
 
+/* background img with opacity */
 section::before {
   content: "";
   position: absolute;
@@ -14,6 +15,7 @@ section::before {
   width: 100%;
 }
 
+/* elements container */
 .box {
   position: relative;
   display: flex;
@@ -23,6 +25,7 @@ section::before {
   height: 100%;
 }
 
+/* title */
 .box::before {
   content: "Choose your path!";
   position: absolute;
@@ -40,6 +43,7 @@ section::before {
   height: 35%;
 }
 
+/* img container */
 .box .img-container {
   position: relative;
   border: 5px solid white;
@@ -49,6 +53,7 @@ section::before {
   overflow: hidden;
 }
 
+/* img overlay */
 .box .img-container .overlay {
   position: absolute;
   top: 0;
@@ -59,6 +64,7 @@ section::before {
   z-index: 1;
 }
 
+/* overlay title */
 .box .img-container .overlay::before {
   content: "BlackJack";
   position: absolute;
@@ -81,6 +87,7 @@ section::before {
   content: "Cripto Market";
 }
 
+/* image */
 .box .img-container img {
   object-fit: fill;
   width: 100%;
@@ -89,13 +96,14 @@ section::before {
   transition: transform 350ms ease-in-out;
 }
 
+/* img hover animation */
 .box .img-container .overlay:hover + img {
   transform: scale(1);
 }
 
+/* selected path img container */
 .img-box {
   position: absolute;
-  border: 5px solid white;
   border-radius: 2rem;
   width: 100%;
   height: 100%;
@@ -105,12 +113,71 @@ section::before {
   transition: transform 350ms ease-in-out;
 }
 
+/* selected path img */
 .img-box img {
   object-fit: fill;
   width: 100%;
   height: 100%;
 }
 
+/* independent class */
 .growUp {
   transform: scale(0);
 }
+
+/* #region responsive*/
+
+/* tablet */
+@media (min-width: 576px) and (max-width: 1100px) {
+  /* title */
+  .box::before {
+    font-size: 5vw;
+  }
+
+  /* img container */
+  .box .img-container {
+    width: 40%;
+    height: 30%;
+  }
+
+  /* overlay title */
+  .box .img-container .overlay::before {
+    font-size: 3.5vw;
+  }
+
+  /* selected path img container */
+  .img-box {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 575.99px) {
+  /* elements container */
+  .box {
+    flex-direction: column;
+  }
+
+  /* title */
+  .box::before {
+    top: -10%;
+    font-size: 6.5vw;
+  }
+
+  /* img container */
+  .box .img-container {
+    width: 50%;
+    height: 25%;
+  }
+
+  /* overlay title */
+  .box .img-container .overlay::before {
+    font-size: 5vw;
+  }
+
+  /* selected path img container */
+  .img-box {
+    border-radius: .5rem;
+  }
+}
+
+/* #endregion */

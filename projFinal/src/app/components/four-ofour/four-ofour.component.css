@@ -4,6 +4,7 @@ section {
   height: 100vh;
 }
 
+/* background img  with opacity */
 section::before {
   content: "";
   position: absolute;
