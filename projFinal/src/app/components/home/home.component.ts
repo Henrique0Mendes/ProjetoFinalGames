@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   // vars
   router: Router;
 
+  // does an animation and switches components
   growUp(element: HTMLElement, value: number) {
     element.classList.toggle("growUp");
 
@@ -42,10 +43,12 @@ export class HomeComponent implements OnInit {
     }, 400);
   }
 
+  // returns the choosen path
   blackJChosen(element: HTMLElement) {
     return this.growUp(element, 1);
   }
 
+  // returns the choosen path
   criptoChosen(element: HTMLElement) {
     return this.growUp(element, 2);
   }
