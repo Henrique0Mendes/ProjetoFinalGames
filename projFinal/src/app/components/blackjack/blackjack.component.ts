@@ -18,9 +18,19 @@ export class BlackjackComponent implements OnInit {
 
   cards;
 
+  shuffle(){
+  this.service.shuffle().subscribe((x) => {
+      if (x['success'] == true ){
+          console.log(x);
+       }else{
+          alert("ERRO shuffle")
+        }
+      }
+      );
+  }
+
   drawCard(){  
     this.service.drawCard().subscribe((x) => {
-      console.log(x);
       if (x['success'] == true ){
       this.cards= (x['cards']);
       console.log(this.cards);
