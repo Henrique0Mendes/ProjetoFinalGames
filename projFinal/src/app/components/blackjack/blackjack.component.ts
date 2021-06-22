@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BlackJack } from 'src/app/classes/black-jack';
 import { BlackJackService } from 'src/app/services/black-jack.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-blackjack',
@@ -12,26 +13,37 @@ export class BlackjackComponent implements OnInit {
   constructor(private service: BlackJackService) { }
 
   ngOnInit(): void {
+    this.brandNewDecks();
   }
 
+  cards;
+  linkdrawCard;
 
-  recivedata ?: any;
-  arrayCartas : Array<BlackJack> =[];
-
-  receberCartas() {
-    this.service.receberCartas().subscribe( 
-      (data) => {
-          this.recivedata = data;
-          console.log(this.recivedata['data'].cards);
-          if(this.recivedata['code'] == 200){
-            this.arrayCartas = this.recivedata['data'].cards.map(( x: any) => new BlackJack(x) )
-
-          }else{
-    
-          }
-
-    });
+  brandNewDecks(){
+      this.service.brandNewDeck().subscribe((x) => {
+        if (x['success'] == true ){
+          this.linkdrawCard = `https://deckofcardsapi.com/api/deck/${x['deck_id']}/draw/?count=1`;
+          console.log(this.linkdrawCard);
+          this.drawCard(this.linkdrawCard);
+       }else{
+          alert("ERRO RECEBER NEW DECK")
+        }
+      }
+      );
   }
+
+  drawCard(link){  
+    this.service.drawCard(link).subscribe((x) => {
+      console.log(x);
+      if (x['success'] == true ){
+      this.cards= (x['cards']);
+      console.log(this.cards);
+      } else{
+        alert("ERRO RECEBER CARTA");
+      }
+    }
+    );
+}
 
 
 }
