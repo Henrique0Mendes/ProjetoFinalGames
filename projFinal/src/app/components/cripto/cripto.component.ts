@@ -15,10 +15,15 @@ export class CriptoComponent implements OnInit {
   }
   wallet: number;
   incomings: number = 0;
+  coinPrice: number = 0;
+  change: number = 0;
 
   onLoad(){
     this.walletService.wallet = JSON.parse(localStorage.wallet);
     this.wallet = this.walletService.wallet;
-
   }
+
+  scroll(elem: HTMLElement) {
+    elem.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+}
 }
