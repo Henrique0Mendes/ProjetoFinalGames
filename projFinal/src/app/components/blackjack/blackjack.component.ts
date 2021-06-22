@@ -27,6 +27,7 @@ export class BlackjackComponent implements OnInit {
       }
       );
   }
+  
   cards;
   drawCard(){  
     this.service.drawCard().subscribe((x) => {

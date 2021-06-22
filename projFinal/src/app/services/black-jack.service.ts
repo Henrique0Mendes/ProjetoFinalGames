@@ -20,4 +20,6 @@ export class BlackJackService {
     return this.http.get(this.shuffleDeck);
   }
 
+  
+
 }
