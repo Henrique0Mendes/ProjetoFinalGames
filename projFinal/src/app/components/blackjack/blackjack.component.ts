@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BlackJackService } from 'src/app/services/black-jack.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-blackjack',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlackjackComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: BlackJackService) { }
 
   ngOnInit(): void {
+    this.drawCard();
   }
+
+  cards;
+
+  shuffle(){
+  this.service.shuffle().subscribe((x) => {
+      if (x['success'] == true ){
+          console.log(x);
+       }else{
+          alert("ERRO shuffle")
+        }
+      }
+      );
+  }
+
+  drawCard(){  
+    this.service.drawCard().subscribe((x) => {
+      if (x['success'] == true ){
+      this.cards= (x['cards']);
+      console.log(this.cards);
+      } else{
+        alert("ERRO RECEBER CARTA");
+      }
+    }
+    );
+}
+
 
 }

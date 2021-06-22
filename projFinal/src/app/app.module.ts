@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FourOFourComponent } from './components/four-ofour/four-ofour.component';
 import { BlackjackComponent } from './components/blackjack/blackjack.component';
 import { CriptoComponent } from './components/cripto/cripto.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { CriptoComponent } from './components/cripto/cripto.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
