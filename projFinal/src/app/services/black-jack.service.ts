@@ -9,14 +9,11 @@ export class BlackJackService {
 
   constructor(private http: HttpClient) { }
 
-  linkbrandNewDecks = "https://deckofcardsapi.com/api/deck/new/";
+  linkdrawCard = `https://deckofcardsapi.com/api/deck/zmh8fvkb6abq/draw/?count=1`;
+  linkbrandNewDecks = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
 
-  brandNewDeck() {
-    return this.http.get(this.linkbrandNewDecks);
-  }
-
-  drawCard(link) {
-    return this.http.get(link);
+  drawCard() {
+    return this.http.get(this.linkdrawCard);
   }
 
 }

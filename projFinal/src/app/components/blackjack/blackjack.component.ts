@@ -13,27 +13,13 @@ export class BlackjackComponent implements OnInit {
   constructor(private service: BlackJackService) { }
 
   ngOnInit(): void {
-    this.brandNewDecks();
+    this.drawCard();
   }
 
   cards;
-  linkdrawCard;
 
-  brandNewDecks(){
-      this.service.brandNewDeck().subscribe((x) => {
-        if (x['success'] == true ){
-          this.linkdrawCard = `https://deckofcardsapi.com/api/deck/${x['deck_id']}/draw/?count=1`;
-          console.log(this.linkdrawCard);
-          this.drawCard(this.linkdrawCard);
-       }else{
-          alert("ERRO RECEBER NEW DECK")
-        }
-      }
-      );
-  }
-
-  drawCard(link){  
-    this.service.drawCard(link).subscribe((x) => {
+  drawCard(){  
+    this.service.drawCard().subscribe((x) => {
       console.log(x);
       if (x['success'] == true ){
       this.cards= (x['cards']);
