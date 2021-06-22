@@ -190,7 +190,7 @@ nav .currencyBox .currency-container span {
 }
 
 .box-container .card .img-container img {
-  object-fit: fill;
+  object-fit: contain;
   border-radius: 100%;
   width: 70%;
   height: 70%;
