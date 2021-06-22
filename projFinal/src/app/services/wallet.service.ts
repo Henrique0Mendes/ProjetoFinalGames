@@ -7,5 +7,5 @@ export class WalletService {
 
   constructor() { }
 
-  wallet: number;
+  wallet: number = 0;
 }

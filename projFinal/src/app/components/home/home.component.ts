@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit {
       this.walletService.wallet = JSON.parse(localStorage.wallet);
     } else {
       this.walletService.wallet = JSON.parse(localStorage.wallet);
-      console.log("Dom fully loaded...");
-      console.log("dinheiro no serviço: ", this.walletService.wallet);
     }
   }
 
