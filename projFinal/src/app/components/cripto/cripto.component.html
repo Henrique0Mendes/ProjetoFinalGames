@@ -24,42 +24,42 @@
 
     <div class="currencyBox">
       <div class="currency-container">
-        <a href="#">Bitcoin</a>
+        <a (click)="scroll(coin1)">Bitcoin</a>
         <span>BTC</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Etherium</a>
-        <span>ETM</span>
+        <a (click)="scroll(coin2)">Etherium</a>
+        <span>ETH</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Binance Coin</a>
+        <a (click)="scroll(coin3)">Binance Coin</a>
         <span>BNB</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">XRP</a>
+        <a (click)="scroll(coin4)">XRP</a>
         <span>XRP</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Dogecoin</a>
+        <a (click)="scroll(coin5)">Dogecoin</a>
         <span>Doge</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Polkadot</a>
+        <a (click)="scroll(coin6)">Polkadot</a>
         <span>DOT</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Litecoin</a>
+        <a (click)="scroll(coin7)">Litecoin</a>
         <span>LTC</span>
       </div>
 
       <div class="currency-container">
-        <a href="#">Maker</a>
+        <a (click)="scroll(coin8)">Maker</a>
         <span>MKR</span>
       </div>
     </div>
@@ -67,95 +67,148 @@
 
 
   <div class="box-container">
-    <div class="currency-card">
+    <div class="card" #coin1>
       <div class="img-container">
-        <img
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-          alt="">
+        <img src="../../../assets/media/bitcoin.png" alt="bitcoin">
       </div>
 
-      <h1>asdfasdas</h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1>asdasdasd</h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button>Invest</button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin2>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/etherium.png" alt="etherium">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button></button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin3>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/binance.png" alt="binance coin">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button></button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin4>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/xrp.png" alt="xrp">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button></button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin5>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/dogecoin.png" alt="dogecoin">
       </div>
 
-      <h1>zz</h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button>zz</button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin6>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/polkadot.png" alt="polkadot">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button>zz</button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin7>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/litecoin.png" alt="litecoin">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button>zz</button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
-    <div class="currency-card">
+
+    <div class="card" #coin8>
       <div class="img-container">
-        <img src="" alt="">
+        <img src="../../../assets/media/maker.png" alt="maker">
       </div>
 
-      <h1></h1>
+      <div class="text">
+        <h1>Price <span>{{coinPrice}}</span>€</h1>
 
-      <h1></h1>
+        <h1>Change <span>{{change}}</span>€</h1>
+      </div>
 
-      <button>zz</button>
+      <div class="invest-box">
+        <input type="text" placeholder="Insira o montante">
+
+        <button>Invest</button>
+      </div>
     </div>
   </div>
 </section>
