@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WalletService } from 'src/app/services/wallet.service';
 
 @Component({
   selector: 'app-cripto',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriptoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private walletService: WalletService) { }
 
   ngOnInit(): void {
+    this.onLoad();
   }
+  wallet: number;
+  incomings: number = 0;
 
+  onLoad(){
+    this.walletService.wallet = JSON.parse(localStorage.wallet);
+    this.wallet = this.walletService.wallet;
+
+  }
 }
