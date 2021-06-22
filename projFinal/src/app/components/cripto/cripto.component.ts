@@ -8,9 +8,10 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './cripto.component.html',
   styleUrls: ['./cripto.component.css']
 })
+
 export class CriptoComponent implements OnInit {
 
-  constructor(private walletService: WalletService, private service:CriptoService) { }
+  constructor(private walletService: WalletService, private service: CriptoService) { }
 
   ngOnInit(): void {
     this.onLoad();
@@ -21,98 +22,92 @@ export class CriptoComponent implements OnInit {
   coinPrice: number = 0;
   change: number = 0;
 
-  onLoad(){
+  onLoad() {
     this.walletService.wallet = JSON.parse(localStorage.wallet);
     this.wallet = this.walletService.wallet;
   }
 
-<<<<<<< HEAD
-  
+  scroll(element): void {
+    element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
 
-  requestCripto(){
-  let linkCripto="";
+  requestCripto() {
+    let linkCripto = "";
     for (let i = 1; i < 8; i++) {
       switch (i) {
         case 1:
-            linkCripto = "https://api.cryptonator.com/api/ticker/btc-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/btc-eur";
+          break;
         case 2:
           linkCripto = "https://api.cryptonator.com/api/ticker/eth-eur";
           break;
         case 3:
-           linkCripto = "https://api.cryptonator.com/api/ticker/bnb-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/bnb-eur";
+          break;
         case 4:
-            linkCripto = "https://api.cryptonator.com/api/ticker/xrp-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/xrp-eur";
+          break;
         case 5:
-            linkCripto = "https://api.cryptonator.com/api/ticker/doge-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/doge-eur";
+          break;
         case 6:
-            linkCripto = "https://api.cryptonator.com/api/ticker/dot-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/dot-eur";
+          break;
         case 7:
-            linkCripto = "https://api.cryptonator.com/api/ticker/ltc-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/ltc-eur";
+          break;
         case 8:
-            linkCripto = "https://api.cryptonator.com/api/ticker/mkr-eur";
-            break;
+          linkCripto = "https://api.cryptonator.com/api/ticker/mkr-eur";
+          break;
         default:
-            console.log("erro");
-        break;
+          console.log("erro");
+          break;
       }
+
       this.service.cripto(linkCripto).subscribe((x) => {
-        if (x['success'] == true ){
-          switch (x['ticker'].base) {  
+
+        if (x['success'] == true) {
+          switch (x['ticker'].base) {
             case 'BTC':
-                this.service.bit.price  = x['ticker'].price;
-                this.service.bit.change = x['ticker'].change;
-                break;
+              this.service.bit.price = x['ticker'].price;
+              this.service.bit.change = x['ticker'].change;
+              break;
             case 'ETH':
-                this.service.eth.price  = x['ticker'].price;
-                this.service.eth.change = x['ticker'].change;
+              this.service.eth.price = x['ticker'].price;
+              this.service.eth.change = x['ticker'].change;
               break;
             case 'BNB':
-                this.service.bnb.price  = x['ticker'].price;
-                this.service.bnb.change = x['ticker'].change;
-                break;
+              this.service.bnb.price = x['ticker'].price;
+              this.service.bnb.change = x['ticker'].change;
+              break;
             case 'XRP':
-                this.service.xrp.price  = x['ticker'].price;
-                this.service.xrp.change = x['ticker'].change;
-                break;
+              this.service.xrp.price = x['ticker'].price;
+              this.service.xrp.change = x['ticker'].change;
+              break;
             case 'DOGE':
-                this.service.doge.price  = x['ticker'].price;
-                this.service.doge.change = x['ticker'].change;
-                break;
+              this.service.doge.price = x['ticker'].price;
+              this.service.doge.change = x['ticker'].change;
+              break;
             case 'DOT':
-                this.service.dot.price  = x['ticker'].price;
-                this.service.dot.change = x['ticker'].change;
-                break;
+              this.service.dot.price = x['ticker'].price;
+              this.service.dot.change = x['ticker'].change;
+              break;
             case 'LTC':
-                this.service.ltc.price  = x['ticker'].price;
-                this.service.ltc.change = x['ticker'].change;
-                break;
+              this.service.ltc.price = x['ticker'].price;
+              this.service.ltc.change = x['ticker'].change;
+              break;
             case 'MKR':
-                this.service.mkr.price  = x['ticker'].price;
-                this.service.mkr.change = x['ticker'].change;
-                break;
+              this.service.mkr.price = x['ticker'].price;
+              this.service.mkr.change = x['ticker'].change;
+              break;
             default:
-                console.log("erro");
-            break;
+              console.log("erro");
+              break;
           }
-         }else{
-            alert("Erro cripto");
-          }
+        } else {
+          alert("Erro cripto");
         }
-        );
-      
+      });
     }
-
-    
   }
-=======
-  scroll(elem: HTMLElement) {
-    elem.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-}
->>>>>>> d7444f94d8007be6a33becf9b2a8cec456e4fea0
 }
