@@ -18,6 +18,10 @@ export class CriptoComponent implements OnInit {
     this.onLoad();
     this.requestCripto();
     this.liveUpdate();
+
+    setTimeout(()=>{ 
+      this.incomings = Math.round((this.incoming() + Number.EPSILON) * 100) / 100;
+      }, 1000);
   }
 
   wallet: number = this.walletService.wallet;
@@ -291,6 +295,7 @@ export class CriptoComponent implements OnInit {
   liveUpdate(){
     setInterval(()=>{ 
       this.requestCripto();
+      this.incomings = Math.round((this.incoming() + Number.EPSILON) * 100) / 100;
     }, 30000);
 
     setTimeout(()=>{ 
@@ -306,8 +311,8 @@ export class CriptoComponent implements OnInit {
     setTimeout(()=>{ 
       this.pagar();
       this.deleteStorage();
+      this.incomings = 0;
     }, 1000);
   }
   }
-  
 }

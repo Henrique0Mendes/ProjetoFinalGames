@@ -238,3 +238,22 @@ nav a img {
   height: 6%;
   cursor: pointer;
 }
+
+.money{
+  position: absolute;
+  top: 5%;
+  left: 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: rgb(211, 211, 211);
+  font-size: 1.1vw;
+  border-radius: 0.3rem;
+  width: 10%;
+  height: 5%;
+}
+
+.hide{
+  display: none !important;
+}

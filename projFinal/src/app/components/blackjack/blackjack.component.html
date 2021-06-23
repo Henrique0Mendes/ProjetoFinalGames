@@ -30,45 +30,45 @@
 
   <div class="player-box">
     <div class="card">
-      <img alt="">
+      <img alt="" id="c1" #card1>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img alt="" id="c2" #card2>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide"id="c3" alt="" #card3>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide" id="c4" alt="" #card4>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide" id="c5" alt="" #card5>
     </div>
   </div>
 
   <div class="dealer-box">
     <div class="card">
-      <img alt="">
+      <img alt="" id="c6" #card6>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img alt="" id="c7" #card7>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide" id="c8" alt="" #card8>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide" id="c9" alt="" #card9>
     </div>
 
     <div class="card">
-      <img alt="">
+      <img class="hide" id="c10" alt="" #card10>
     </div>
   </div>
 
@@ -76,16 +76,18 @@
     <img src="../../../assets/media/FullDeck.png" alt="deck">
   </div>
 
-  <button class="start" (click)="iniciarJogo()">Jogar</button>
+  <button class="start" (click)="iniciarJogo(card1, card2, card3, card4, card5, card6, card7, card8, card9, card10)">Jogar</button>
 
   <button class="clearb" (click)="clearBet()">Apagar aposta</button>
+
+  <h1 class="money">{{wallet}}€</h1>
 
   <div class="gameplay">
     <h1>{{bet}}</h1>
 
-    <button>Pedir</button>
+    <button (click)="drawPCard(card3, card4, card5)">Pedir</button>
 
-    <button>Parar</button>
+    <button (click)="drawDCard(card8, card9, card10)">Parar</button>
 
     <button>Dividir</button>
   </div>

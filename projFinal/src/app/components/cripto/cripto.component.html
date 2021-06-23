@@ -17,7 +17,7 @@
 
         <div class="box">
           <h1>incomings</h1>
-          <p>{{incomings}}€</p>
+          <p [ngClass]="{'red': incomings < 0}">{{incomings}}€</p>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
       <div class="text">
         <h1 >Price <span #precoBTC>{{coinPriceBTC}}</span>€</h1>
 
-        <h1>Change <span>{{changeBTC}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeBTC < 0}">{{changeBTC}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -93,7 +93,7 @@
       <div class="text">
         <h1>Price <span #precoETH>{{coinPriceETH}}</span>€</h1>
 
-        <h1>Change <span>{{changeETH}}</span>€</h1>
+        <h1 >Change <span [ngClass]="{'red': changeETH < 0}">{{changeETH}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -111,7 +111,7 @@
       <div class="text">
         <h1>Price <span #precoBNB>{{coinPriceBNB}}</span>€</h1>
 
-        <h1>Change <span>{{changeBNB}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeBNB < 0}">{{changeBNB}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -129,7 +129,7 @@
       <div class="text">
         <h1>Price <span #precoXRP>{{coinPriceXRP}}</span>€</h1>
 
-        <h1>Change <span>{{changeXRP}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeXRP < 0}">{{changeXRP}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -147,7 +147,7 @@
       <div class="text">
         <h1>Price <span #precoDOGE>{{coinPriceDOGE}}</span>€</h1>
 
-        <h1>Change <span>{{changeDOGE}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeDOGE < 0}">{{changeDOGE}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -165,7 +165,7 @@
       <div class="text">
         <h1>Price <span #precoDOT>{{coinPriceDOT}}</span>€</h1>
 
-        <h1>Change <span>{{changeDOT}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeDOT < 0}">{{changeDOT}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -183,7 +183,7 @@
       <div class="text">
         <h1>Price <span #precoLTC>{{coinPriceLTC}}</span>€</h1>
 
-        <h1>Change <span>{{changeLTC}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeLTC < 0}">{{changeLTC}}€</span></h1>
       </div>
 
       <div class="invest-box">
@@ -201,7 +201,7 @@
       <div class="text">
         <h1>Price <span #precoMKR>{{coinPriceMKR}}</span>€</h1>
 
-        <h1>Change <span>{{changeMKR}}</span>€</h1>
+        <h1>Change <span [ngClass]="{'red': changeMKR < 0}">{{changeMKR}}€</span></h1>
       </div>
 
       <div class="invest-box">
