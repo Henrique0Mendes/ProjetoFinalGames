@@ -31,13 +31,20 @@ export class CriptoComponent implements OnInit {
   incomings: number = 0;
 
 
-  comprar(nome, valorCripto, valorInvestido ){
-    let comprarCripto = new Cripto(nome, valorCripto, valorInvestido);
+  comprar(nome, valorCripto, valorInvestido){
+
+    valorInvestido = valorInvestido * valorCripto;
+    if (valorInvestido<this.walletService.wallet){
+      let comprarCripto = new Cripto(nome, valorCripto, valorInvestido);
     
-    this.gravarStorage(comprarCripto);
-    this.walletService.wallet = this.walletService.wallet - comprarCripto.valorInvestido;
-    this.wallet = this.walletService.wallet;
-    this.updateStorage();
+      this.gravarStorage(comprarCripto);
+      this.walletService.wallet = this.walletService.wallet - comprarCripto.valorInvestido;
+      this.wallet = this.walletService.wallet;
+      this.updateStorage();
+    }else{
+      alert("Dinheiro insuficiente");
+    }
+  
   }
 
    gravarStorage(comprarCripto) {
@@ -60,46 +67,62 @@ export class CriptoComponent implements OnInit {
   }
 
   pagar(){
-    let valor:any = localStorage.getItem("Bitcoin");
-    let pagar =  JSON.parse(valor).valorCripto - JSON.parse(valor).valorInvestido;
-       if (pagar>0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar;
+    if (localStorage.getItem("Bitcoin")===null){}else{
+      let valor:any = localStorage.getItem("Bitcoin");
+      let pagar =  JSON.parse(valor).valorCripto - JSON.parse(valor).valorInvestido;
+         if (pagar>0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar;
+        }
+    }
+    if (localStorage.getItem("Etherium")===null){}else{
+      let valor1:any = localStorage.getItem("Etherium");
+      let pagar1 =  JSON.parse(valor1).valorCripto - JSON.parse(valor1).valorInvestido;
+        if (pagar1>0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar1;
+        }
+    }
+    if (localStorage.getItem("XRH")===null){}else{
+      let valor2:any = localStorage.getItem("XHR");
+      let pagar2 = JSON.parse(valor2).valorCripto - JSON.parse(valor2).valorInvestido;
+        if (pagar2>0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar2;
+        }
+    }
+    if (localStorage.getItem("Dogecoin")===null){}else{
+      let valor3:any = localStorage.getItem("Dogecoin");
+      let pagar3 =  JSON.parse(valor3).valorCripto - JSON.parse(valor3).valorInvestido;
+        if (pagar3>0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar3;
+        }
+    }
+    if (localStorage.getItem("Dogecoin")===null){}else{
+      let valor4:any = localStorage.getItem("Litecoin");
+      let pagar4 =  JSON.parse(valor4).valorCripto - JSON.parse(valor4).valorInvestido;
+        if (pagar4>0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar4;
+        }
       }
-    let valor1:any = localStorage.getItem("Etherium");
-    let pagar1 =  JSON.parse(valor1).valorCripto - JSON.parse(valor1).valorInvestido;
-      if (pagar1>0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar1;
-      }
-    let valor2:any = localStorage.getItem("XHR");
-    let pagar2 = JSON.parse(valor2).valorCripto - JSON.parse(valor2).valorInvestido;
-      if (pagar2>0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar2;
-      }
-    let valor3:any = localStorage.getItem("Dogecoin");
-    let pagar3 =  JSON.parse(valor3).valorCripto - JSON.parse(valor3).valorInvestido;
-      if (pagar3>0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar3;
-      }
-    let valor4:any = localStorage.getItem("Litecoin");
-    let pagar4 =  JSON.parse(valor4).valorCripto - JSON.parse(valor4).valorInvestido;
-      if (pagar4>0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar4;
-      }
-    let valor5:any = localStorage.getItem("Marker");
-    let pagar5 = JSON.parse(valor5).valorCripto - JSON.parse(valor5).valorInvestido;
-      if (pagar5 > 0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar5;
-      }
-    let valor6:any = localStorage.getItem("Binance Coin");
-    let pagar6 = JSON.parse(valor6).valorCripto - JSON.parse(valor6).valorInvestido;
-      if (pagar6 > 0 ){
-        this.walletService.wallet = this.walletService.wallet + pagar6;
-      }
-    let valor7:any = localStorage.getItem("Polkadot");
-    let pagar7 =  JSON.parse(valor7).valorCripto - JSON.parse(valor7).valorInvestido;
-      if (pagar7 > 0 ){
-          this.walletService.wallet = this.walletService.wallet + pagar7;
-      } 
+    if (localStorage.getItem("Dogecoin")===null){}else{
+      let valor5:any = localStorage.getItem("Marker");
+      let pagar5 = JSON.parse(valor5).valorCripto - JSON.parse(valor5).valorInvestido;
+        if (pagar5 > 0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar5;
+        }
+    }
+    if (localStorage.getItem("Dogecoin")===null){}else{
+      let valor6:any = localStorage.getItem("Binance Coin");
+      let pagar6 = JSON.parse(valor6).valorCripto - JSON.parse(valor6).valorInvestido;
+        if (pagar6 > 0 ){
+          this.walletService.wallet = this.walletService.wallet + pagar6;
+        }
+    }
+    if (localStorage.getItem("Dogecoin")===null){}else{
+      let valor7:any = localStorage.getItem("Polkadot");
+      let pagar7 =  JSON.parse(valor7).valorCripto - JSON.parse(valor7).valorInvestido;
+        if (pagar7 > 0 ){
+            this.walletService.wallet = this.walletService.wallet + pagar7;
+        } 
+    }
   }
 
   onLoad() {
