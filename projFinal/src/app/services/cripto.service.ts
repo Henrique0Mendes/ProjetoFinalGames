@@ -7,6 +7,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CriptoService {
 
+  constructor(private http: HttpClient) { 
+  }
+
+
   bit:any= {
     price:"",
     change:""
@@ -39,11 +43,7 @@ export class CriptoService {
     price:"",
     change:""
   };
-
-  constructor(private http: HttpClient) { 
-  }
-
-
+ 
   cripto(linkCripto) {
     return this.http.get(linkCripto);
   }
