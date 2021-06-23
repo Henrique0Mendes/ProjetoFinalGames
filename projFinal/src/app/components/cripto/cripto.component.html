@@ -17,7 +17,7 @@
 
         <div class="box">
           <h1>incomings</h1>
-          <p>+{{incomings}}€</p>
+          <p>{{incomings}}€</p>
         </div>
       </div>
     </div>
@@ -210,5 +210,10 @@
         <button  (click)="comprar(mrk.innerText, precoMKR.innerText , valorInvestidoMrk.value)">Invest</button>
       </div>
     </div>
+  </div>
+
+  <div class="nav">
+    <a (click)="withdraw()">Withdraw</a>
+    <a routerLink="/blackjack">BlackJack</a>
   </div>
 </section>
