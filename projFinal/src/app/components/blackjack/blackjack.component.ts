@@ -13,42 +13,37 @@ export class BlackjackComponent implements OnInit {
   constructor(private service: BlackJackService) { }
 
   ngOnInit(): void {
+    this.shuffle();
   }
 
 
 
-  shuffle(){
-  this.service.shuffle().subscribe((x) => {
-      if (x['success'] == true ){
-          console.log(x);
-       }else{
-          alert("ERRO shuffle")
-        }
+  shuffle() {
+    this.service.shuffle().subscribe((x) => {
+      if (x['success'] == true) {
+        console.log(x);
+      } else {
+        alert("ERRO shuffle")
       }
-      );
+    }
+    );
   }
-  
+
   cards;
-  drawCard(){  
+  drawCard() {
     this.service.drawCard().subscribe((x) => {
-      if (x['success'] == true ){
-      this.cards= (x['cards']);
-      console.log(this.cards);
-      } else{
+      if (x['success'] == true) {
+        this.cards = (x['cards']);
+        console.log(this.cards);
+      } else {
         alert("ERRO RECEBER CARTA");
       }
     }
     );
-}
+  }
 
-iniciarJogo(){
-  this.drawCard();
-}
-
-fundo;
-
-mudarfundo(){
-  
-}
+  iniciarJogo() {
+    this.drawCard();
+  }
 
 }

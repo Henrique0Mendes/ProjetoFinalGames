@@ -1,7 +1,87 @@
+section {
+  position: relative;
+  background: green url(../../../assets/media/blackjackBg.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
+nav {
+  position: absolute;
+  left: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 100rem 0 0 100rem;
+  width: 15%;
+  height: 7%;
+}
 
-.botaofundo{
-    width: 10%;
-    height:30%;
-    background-color: aquamarine;
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1vw;
+  text-decoration: none;
+  width: 50%;
+  height: 100%;
+}
+
+nav a:nth-of-type(1) {
+  position: relative;
+}
+
+nav a:nth-of-type(1)::before {
+  content: "";
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  background: white;
+  width: 90%;
+  height: 3%;
+  transform: scale(0);
+  transition: transform 150ms ease-in-out;
+}
+
+nav a:nth-of-type(1):hover::before {
+  transform: scale(1);
+}
+
+nav a:nth-of-type(2) {
+  width: 20%;
+  height: 70%;
+}
+
+nav a img {
+  width: 100%;
+  height: 100%;
+}
+
+.chip-box {
+  position: absolute;
+  top: 15%;
+  left: -2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.3rem;
+  border: 5px solid white;
+  border-left: none;
+  height: 70%;
+  width: 15%;
+}
+
+.chip-box .chip {
+  border: 2px solid white;
+  border-radius: 100%;
+  width: 45%;
+  height: calc(100% / 5 - 10px);
+}
+
+.chip-box .chip img{
+  object-fit: fill;
+  width: 90%;
+  height: 90%;
 }
