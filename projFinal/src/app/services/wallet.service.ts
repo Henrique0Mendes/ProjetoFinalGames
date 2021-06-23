@@ -8,4 +8,6 @@ export class WalletService {
   constructor() { }
 
   wallet: number = 0;
+
+  
 }

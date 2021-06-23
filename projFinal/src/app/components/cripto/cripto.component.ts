@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CriptoService } from 'src/app/services/cripto.service';
 import { WalletService } from 'src/app/services/wallet.service';
 import { HttpClient } from '@angular/common/http';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Cripto } from 'src/app/classes/cripto';
 
 @Component({
   selector: 'app-cripto',
@@ -17,11 +17,34 @@ export class CriptoComponent implements OnInit {
   ngOnInit(): void {
     this.onLoad();
     this.requestCripto();
+
+    if (localStorage.getItem("cripto") === null) {
+    } else {
+    
+    }
   }
-  wallet: number;
+
+  wallet: number = this.walletService.wallet;
   incomings: number = 0;
   coinPrice: number = 0;
   change: number = 0;
+
+  comprar(nome, valorCripto, valorInvestido ){
+    let comprarCripto = new Cripto(nome, valorCripto, valorInvestido);
+    this.gravarStorage(comprarCripto);
+    this.walletService.wallet = this.walletService.wallet - comprarCripto.valorInvestido;
+    this.wallet = this.walletService.wallet;
+    this.updateStorage();
+  }
+
+   gravarStorage(comprarCripto) {
+    localStorage.setItem(comprarCripto.nome, JSON.stringify(comprarCripto));
+  }
+
+  updateStorage() {
+    localStorage.setItem("wallet", JSON.stringify(this.walletService.wallet));
+  }
+
 
   onLoad() {
     this.walletService.wallet = JSON.parse(localStorage.wallet);

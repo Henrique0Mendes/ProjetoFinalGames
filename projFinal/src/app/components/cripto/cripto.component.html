@@ -24,42 +24,42 @@
 
     <div class="currencyBox">
       <div class="currency-container">
-        <a (click)="scroll(coin1)">Bitcoin</a>
+        <a #btc (click)="scroll(coin1)">Bitcoin</a>
         <span>BTC</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin2)">Etherium</a>
+        <a #eth (click)="scroll(coin2)">Etherium</a>
         <span>ETH</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin3)">Binance Coin</a>
+        <a #bnb (click)="scroll(coin3)">Binance Coin</a>
         <span>BNB</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin4)">XRP</a>
+        <a #xrp (click)="scroll(coin4)">XRP</a>
         <span>XRP</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin5)">Dogecoin</a>
+        <a #doge (click)="scroll(coin5)">Dogecoin</a>
         <span>Doge</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin6)">Polkadot</a>
+        <a #dot (click)="scroll(coin6)">Polkadot</a>
         <span>DOT</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin7)">Litecoin</a>
+        <a #ltc (click)="scroll(coin7)">Litecoin</a>
         <span>LTC</span>
       </div>
 
       <div class="currency-container">
-        <a (click)="scroll(coin8)">Maker</a>
+        <a #mrk (click)="scroll(coin8)">Maker</a>
         <span>MKR</span>
       </div>
     </div>
@@ -73,15 +73,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceBTC}}</span>€</h1>
+        <h1 >Price <span #precoBTC>{{coinPriceBTC}}</span>€</h1>
 
         <h1>Change <span>{{changeBTC}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoBTC placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( btc.innerText, precoBTC.innerText , valorInvestidoBTC.value)">Invest</button>
       </div>
     </div>
 
@@ -91,15 +91,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceETH}}</span>€</h1>
+        <h1>Price <span #precoETH>{{coinPriceETH}}</span>€</h1>
 
         <h1>Change <span>{{changeETH}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text"  #valorInvestidoETH placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( eth.innerText, precoETH.innerText , valorInvestidoETH.value)">Invest</button>
       </div>
     </div>
 
@@ -109,15 +109,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceBNB}}</span>€</h1>
+        <h1>Price <span #precoBNB>{{coinPriceBNB}}</span>€</h1>
 
         <h1>Change <span>{{changeBNB}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoBNB placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( bnb.innerText, precoBNB.innerText , valorInvestidoBNB.value)">Invest</button>
       </div>
     </div>
 
@@ -127,15 +127,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceXRP}}</span>€</h1>
+        <h1>Price <span #precoXRP>{{coinPriceXRP}}</span>€</h1>
 
         <h1>Change <span>{{changeXRP}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoXRP placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( xrp.innerText, precoXRP.innerText , valorInvestidoXRP.value)">Invest</button>
       </div>
     </div>
 
@@ -145,15 +145,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceDOGE}}</span>€</h1>
+        <h1>Price <span #precoDOGE>{{coinPriceDOGE}}</span>€</h1>
 
         <h1>Change <span>{{changeDOGE}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoDOGE placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( doge.innerText, precoDOGE.innerText , valorInvestidoDOGE.value)">Invest</button>
       </div>
     </div>
 
@@ -163,15 +163,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceDOT}}</span>€</h1>
+        <h1>Price <span #precoDOT>{{coinPriceDOT}}</span>€</h1>
 
         <h1>Change <span>{{changeDOT}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoDOT placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar( dot.innerText, precoDOT.innerText , valorInvestidoDOT.value)">Invest</button>
       </div>
     </div>
 
@@ -181,15 +181,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceLTC}}</span>€</h1>
+        <h1>Price <span #precoLTC>{{coinPriceLTC}}</span>€</h1>
 
         <h1>Change <span>{{changeLTC}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoLTC placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button (click)="comprar(ltc.innerText, precoLTC.innerText , valorInvestidoLTC.value)">Invest</button>
       </div>
     </div>
 
@@ -199,15 +199,15 @@
       </div>
 
       <div class="text">
-        <h1>Price <span>{{coinPriceMKR}}</span>€</h1>
+        <h1>Price <span #precoMKR>{{coinPriceMKR}}</span>€</h1>
 
         <h1>Change <span>{{changeMKR}}</span>€</h1>
       </div>
 
       <div class="invest-box">
-        <input type="text" placeholder="Insira o montante">
+        <input type="text" #valorInvestidoMrk placeholder="Insira o montante">
 
-        <button>Invest</button>
+        <button  (click)="comprar(mrk.innerText, precoMKR.innerText , valorInvestidoMrk.value)">Invest</button>
       </div>
     </div>
   </div>
