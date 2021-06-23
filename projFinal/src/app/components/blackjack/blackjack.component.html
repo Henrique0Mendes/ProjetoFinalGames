@@ -8,24 +8,85 @@
 
   <div class="chip-box">
     <div class="chip">
-      <img src="../../../assets/media/chip1.png" alt="chip de 1">
+      <img src="../../../assets/media/chip1.png" alt="chip de 1" (click)="placeBet(1)">
     </div>
 
     <div class="chip">
-      <img src="../../../assets/media/chip5.png" alt="chip de 5">
+      <img src="../../../assets/media/chip5.png" alt="chip de 5" (click)="placeBet(5)">
     </div>
 
     <div class="chip">
-      <img src="../../../assets/media/chip10.png" alt="chip de 10">
+      <img src="../../../assets/media/chip10.png" alt="chip de 10" (click)="placeBet(10)">
     </div>
 
     <div class="chip">
-      <img src="../../../assets/media/chip25.png" alt="chip de 25">
+      <img src="../../../assets/media/chip25.png" alt="chip de 25" (click)="placeBet(25)">
     </div>
 
     <div class="chip">
-      <img src="../../../assets/media/chip50.png" alt="chip de 50">
+      <img src="../../../assets/media/chip50.png" alt="chip de 50" (click)="placeBet(50)">
     </div>
   </div>
+
+  <div class="player-box">
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+  </div>
+
+  <div class="dealer-box">
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+
+    <div class="card">
+      <img alt="">
+    </div>
+  </div>
+
+  <div class="deck">
+    <img src="../../../assets/media/FullDeck.png" alt="deck">
+  </div>
+
+  <button class="start" (click)="iniciarJogo()">Jogar</button>
+
+  <button class="clearb" (click)="clearBet()">Apagar aposta</button>
+
+  <div class="gameplay">
+    <h1>{{bet}}</h1>
+
+    <button>Pedir</button>
+
+    <button>Parar</button>
+
+    <button>Dividir</button>
+  </div>
 </section>
-<!-- <button (click)="iniciarJogo()">Jogar</button> -->

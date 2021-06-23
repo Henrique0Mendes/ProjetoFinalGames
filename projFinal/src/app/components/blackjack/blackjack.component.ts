@@ -16,7 +16,7 @@ export class BlackjackComponent implements OnInit {
     this.shuffle();
   }
 
-
+  bet: number = 0;
 
   shuffle() {
     this.service.shuffle().subscribe((x) => {
@@ -43,7 +43,16 @@ export class BlackjackComponent implements OnInit {
   }
 
   iniciarJogo() {
-    this.drawCard();
+    if (this.bet != 0) {
+      this.drawCard();
+    }
   }
 
+  placeBet(value: number) {
+    return this.bet += value;
+  }
+
+  clearBet(){
+    return this.bet = 0;
+  }
 }
